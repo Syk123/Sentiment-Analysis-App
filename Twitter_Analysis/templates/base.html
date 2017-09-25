@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    {% include 'css.html' %}
+    <title>Twitter Sentiment Analysis</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="#"><img height="20" width="30" src="{% static 'images/brand_image.png' %}" alt = ""></a></li>
+        <li><a class="navbar-link" href="#">Home</a></li>
+        <li><a class="navbar-link" href="#">Top Trends</a></li>
+        <li><a class="navbar-link" href="#">About</a></li>
+        <li><a class="navbar-link" href="#">Contact</a></li>
+      </ul>
+
+      </div>
+    </nav>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    {% include 'js.html' %}
+    <script>
+    $(document).ready(function(){
+      {% block jq %}{% endblock %}
+    })
+    </script>
+  </body>
+</html>

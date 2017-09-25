@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!-- I have to get input from the user and perform the Sentiment Analysis on the word. This is a static page because we
+have no use of database at least at the moment so we can use javascript
+
+Use javascript and get the value. Then proceed to call the python script and display the output using view. -->
+
+
+<form method="POST" action="{% url 'stats' %}">
+  {% csrf_token %}
+  <input name="handle" type="text" class="form-control" placeholder="Enter Trending Topic" aria-describedby="sizing-addon1">
+  <br><br>
+  <input type="submit" name="submit" class="btn btn-primary" value="Search">
+</form>
+
+
+{% endblock %}
